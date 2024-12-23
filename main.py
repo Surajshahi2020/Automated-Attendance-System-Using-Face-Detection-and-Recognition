@@ -82,6 +82,14 @@ def mark_attendance(name):
         writer.writerow([name, timestamp])  # Write the attendance record
 
 # Function to display "Attendance OK" message
+"""frame: The image/frame where the text is displayed.
+"Attendance OK": The text string to display.
+(int(frame.shape[1] / 2) - 100, int(frame.shape[0] / 2)): The coordinates for placing the text, calculated dynamically to position it roughly at the center of the frame.
+cv2.FONT_HERSHEY_SIMPLEX: Specifies the font type for the text.
+1: Font scale, controlling the size of the text.
+(0, 255, 0): Color of the text in BGR format (green in this case).
+2: Thickness of the text.
+cv2.LINE_AA: Anti-aliasing for better text quality."""
 def show_attendance_message(frame):
     cv2.putText(frame, "Attendance OK", (int(frame.shape[1] / 2) - 100, int(frame.shape[0] / 2)),
                 cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)

@@ -43,6 +43,7 @@ while count < 20:
         break
 
     gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    #is part of a face detection system using OpenCV's Haar Cascade Classifier. It detects multiple faces in an image or video frame.
     faces = face_cascade.detectMultiScale(gray_frame, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
 
     for (x, y, w, h) in faces:
